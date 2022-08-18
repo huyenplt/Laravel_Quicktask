@@ -40,6 +40,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected function fullname(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value, $attributes) => $attributes['first_name'] . ' ' . $attributes['last_name']
+        );
+    }
+
+    protected function username(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => Str::slug($value, '-'),
+        );
+    }
+
     public function posts() {
         return $this->hasMany(Post::class);
     }
