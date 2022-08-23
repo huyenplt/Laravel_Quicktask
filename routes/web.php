@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController')->middleware('admin');;
 
 Route::prefix('posts')->name('posts.')->controller(PostController::class)->group(function () {
     Route::get('/', 'index')->name('index');
