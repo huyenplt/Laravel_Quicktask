@@ -18,7 +18,7 @@ class CheckAdmin
     {
         $user = $request->user();
         if (!$user || !$user->is_admin) {
-            return redirect(name: 'client');
+            return redirect()->route('client');
         }
 
         return $next($request);
