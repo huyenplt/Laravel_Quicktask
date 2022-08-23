@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class CheckAdmin
 {
@@ -19,7 +18,7 @@ class CheckAdmin
     {
         $user = $request->user();
         if (!$user || !$user->is_admin) {
-            return Redirect::route('/');
+            return redirect(name: 'client');
         }
 
         return $next($request);
