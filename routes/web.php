@@ -30,3 +30,7 @@ Route::prefix('posts')->name('posts.')->controller(PostController::class)->group
     Route::put('/{post}', 'update')->name('update');
     Route::delete('/{post}', 'destroy')->name('destroy');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
