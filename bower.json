@@ -1,0 +1,18 @@
+{
+  "name": "Laravel_Quicktask",
+  "description": "",
+  "main": "",
+  "authors": [
+    "HuyenPLT"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/huyenplt/Laravel_Quicktask",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
